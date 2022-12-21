@@ -25,16 +25,22 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" onclick=" writePassword() ">Generate Password</button>
         </div>
         <div>
-          <form>
-            <input type="number" min="8" max="128">
-            <label for="selector">Select between 8 to 128 characters</label>
-          </form>
+          <select id="numberSelect"></select>
+          <script>
+            let select = document.querySelector('#numberSelect');
+              for (let i = 8; i <= 128; i++) {
+              let option = document.createElement('option');
+              option.value = i;
+              option.text = i;
+              select.add(option);
+           }
+          </script>
         </div>
         <div>
-          <input type="checkbox" id="cb1" value="num"/>
+          <input type="checkbox" id="cb1" value="Numbers"/>
           <label for="cb1">Number</label>
           <input type="checkbox" id="cb2" value="Uppercase"/>
           <label for="cb1">Uppercase</label>
@@ -42,7 +48,7 @@
         <div>
           <input type="checkbox" id="cb3" value="Lowercase"/>
           <label for="cb1">Lowercase</label>
-          <input type="checkbox" id="cb4" value="Special characters"/>
+          <input type="checkbox" id="cb4" value="Symbols"/>
           <label for="cb1">Symbol</label>
         </div>
       </div>
